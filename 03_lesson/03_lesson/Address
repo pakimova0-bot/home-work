@@ -1,0 +1,16 @@
+class Address:
+    def __init__(self, index, city, street, house, apartment):
+        self.index = index
+        self.city = city
+        self.street = street
+        self.house = house
+        self.apartment = apartment
+
+
+
+
+index = 124498
+city = Зеленоград
+street =  Центральный проспект
+house =  445
+apartment =  252
