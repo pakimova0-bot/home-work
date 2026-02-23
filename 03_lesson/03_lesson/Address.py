@@ -5,12 +5,6 @@ class Address:
         self.street = street
         self.house = house
         self.apartment = apartment
-
-
-
-
-index = 124498
-city = Зеленоград
-street =  Центральный проспект
-house =  445
-apartment =  252
+def __str__(self):
+    return (f"{self.index}, {self.city}, {self.street}, {self.house}, {self.apartment}")
+    
