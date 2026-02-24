@@ -1,4 +1,5 @@
 class Smartphone:
+
     def __init__(self, marka, model, number):
         self.marka = marka
         self.model = model
@@ -8,12 +9,14 @@ class Smartphone:
         return self.marka
 
     def get_model(self):
-        return self.model    
-    
+        return self.model
+
     def get_number(self):
-        return self.number      
-    
-    def get_Smartphone_info(self):
-        return f"марка: {self.marka}, модель: {self.model}, номер телефона: {self.number}"
+        return self.number
+
+    def get_smartphone_info(self):
+         return f"Марка: {self.marka}; Модель: {self.model}; Номер: {self.number}"
+
+
   
     
