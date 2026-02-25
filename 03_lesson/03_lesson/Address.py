@@ -5,6 +5,9 @@ class address:
         self.street = street
         self.house = house
         self.apartment = apartment
-def __str__(self):
-    return (f"{self.index}, {self.city}, {self.street}, {self.house}, {self.apartment}")
+
+    def __str__(self):
+        return f"{self.index}, {self.city}, {self.street}, д. {self.house}, кв. {self.apartment}"
+
+    __repr__ = __str__
     
