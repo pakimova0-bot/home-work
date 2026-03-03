@@ -31,18 +31,31 @@ def test_process_negative(self, units, input_data, expected_result):
     ("", "")
 ])        
 def contains ( self, string: str, symbol: str, [
-
-    ('SkyPro', 'F', 'SyPro'),
-    ('SkyPro', 'O', 'Sky')
+    ("SkyPro", "F", "SyPro"),
+    ("SkyPro", "O", "Sky")
     ])
 @pytest.mark.parametrize (
-"Input_string, Symbol",
+"input_string, Symbol",
     [
         ("Hello!", "H"),
-        ("123456", "_"),
+        ("123456", " "),
         ("Hello", "W")
 ],
 )
 def test_contains(Input_string, Symbol):
     Utils3=StringUtils()
-    assert Utils3.contains(input_string, Symbol) is True
+    assert Utils3.contains(input_string, symbol) is True
+
+
+@pytest.mark.positive
+def test_delete_symbol_positive(string, symbol, expected_result):
+    assert string_utils.delete_symbol(string, symbol) == expected_result
+    assert string_utils.delete_symbol("skypro", "s") == "kypro"
+
+
+@pytest.mark.negative
+def test_delete_symbol_positive(string, symbol, expected_result):
+    assert string_utils.delete_symbol(string, symbol) == expected_result
+    assert string_utils.delete_symbol("skypro", "s") == "skypro"    
+
+
