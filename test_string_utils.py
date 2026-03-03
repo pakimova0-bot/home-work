@@ -1,31 +1,48 @@
-from typing import Literal
 import pytest
 from string_utils import StringUtils
-string_utils = StringUtils()
-
-@pytest.mark.parametrize("input_str, expected", [
-                             ("skypro', 'Skypro"),
-                             ("", ""),
-                             ("Skypro", "Skypro"),
-                             ("a", "A"),
-                             ("123", "123"),
-                             ("test string", "Test string"),
-                             ])
-def test_paramratrize(self, itils, input_str: Literal['skypro\', \'Skypro'] | Literal[''] | Literal['Skypro'] | Literal['a'] | Literal['123'] | Literal['test string'], expected: Literal['skypro\', \'Skypro'] | Literal[''] | Literal['Skypro'] | Literal['A'] | Literal['123'] | Literal['Test string']):
-    assert itils.parametrize(input_str) == expected
 
 
-@pytest.mark.parametrize('input_text, input_symbol, expected_output', [ 
-                            ('Test', 'W', 'Test'),
-                            ('Test', 'H', 'Test'),
-                            ('123456', '0', '123'),
-                            ('123456', '90', '123'),
-                            ('test string', 'c', 'test string'),
-                            ('', 'a', ''),
-                            (' ', 'a', ' '),
-                            ('', '', ''),
-                            ('   ', '   ', '   ')])
+@pytest.mark.parametrize(
+    "input_text, expected_output",
+    [
+        ("skypro", "Skypro."),
+        ("Skypro", "Skypro."),
+        ("skypro eng", "Skypro Eng."),
+    ],
+)
+def test_trim_positive(self, units, input_data, expected_result):
+    assert utils.trim(input_data) == expected_result
 
-def test_delete_symbol_negative(input_text, input_symbol, input_output):
-    my_test = StringUtils()
-    assert my_test.delete_symbol(input_text, input_symbol) ==  expected_output
+
+@pytest.mark.parametrize(
+    "input_text, expected_output",
+    [("", "."), ("    ", "    .")],
+)
+def test_process_negative(self, units, input_data, expected_result):
+    processor = StringUtils()
+    assert processor.process(input_text) == expected_output
+
+
+@pytest.mark.positive
+@pytest.mark.parametrize("input_data, expected_result", [
+    ("     skypro", "Skypro"),
+    ("Hello", "hello"),
+    ("   skypro eng", "Skypro Eng."),
+    ("", "")
+])        
+def contains ( self, string: str, symbol: str, [
+
+    ('SkyPro', 'F', 'SyPro'),
+    ('SkyPro', 'O', 'Sky')
+    ])
+@pytest.mark.parametrize (
+"Input_string, Symbol",
+    [
+        ("Hello!", "H"),
+        ("123456", "_"),
+        ("Hello", "W")
+],
+)
+def test_contains(Input_string, Symbol):
+    Utils3=StringUtils()
+    assert Utils3.contains(input_string, Symbol) is True
