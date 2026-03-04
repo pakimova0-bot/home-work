@@ -47,15 +47,14 @@ def test_contains(Input_string, Symbol):
     assert Utils3.contains(input_string, symbol) is True
 
 
-@pytest.mark.positive
-def test_delete_symbol_positive(string, symbol, expected_result):
-    assert string_utils.delete_symbol(string, symbol) == expected_result
-    assert string_utils.delete_symbol("skypro", "s") == "kypro"
+@pytest.mark.parametrize("input_str, symbol, expected", [
+    ("SkyPro", "k", "SyPro"),
+    ("SkyPro", "Pro", "Sky"),
+])
+def test_delete_symbol_positive(input_str, symbol, expected):
+    utils = StringUtils()
+    assert utils.delete_symbol(input_str, symbol) == expected
 
-
-@pytest.mark.negative
-def test_delete_symbol_positive(string, symbol, expected_result):
-    assert string_utils.delete_symbol(string, symbol) == expected_result
-    assert string_utils.delete_symbol("skypro", "s") == "skypro"    
+  
 
 
