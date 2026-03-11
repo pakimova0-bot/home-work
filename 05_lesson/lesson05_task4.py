@@ -3,15 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-options = webdriver.FireFoxOptions()
-driver = webdriver.FireFox()
+options = webdriver.FirefoxOptions()
+driver = webdriver.Firefox()
 driver.get("http://the-internet.herokuapp.com/login")
 
 un = "input[name='username']"
-push_login = driver.find_elemrnt(By.CSS_SELECTOR, un)
+push_login = driver.find_element(By.CSS_SELECTOR, un)
 push_login.send_keys("tomsmith")
 
-pw = "input{id='password'}"
+pw = "input[id='password']"
 push_pass = driver.find_element(By.CSS_SELECTOR, pw)
 push_pass.send_keys("SuperSecretPassword!")
 
