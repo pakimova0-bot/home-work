@@ -21,7 +21,7 @@ log = "button.radius"
 push_login = driver.find_element(By.CSS_SELECTOR, log)
 log.click()
 
-success_massage = drive.find_element(By.CSS_SELECTOR, "div.flash.success")
+success_massage = driver.find_element(By.CSS_SELECTOR, "div.flash.success")
 print(success_massage.text)
 
 sleep(10)
